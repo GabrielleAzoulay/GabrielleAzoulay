@@ -1,0 +1,36 @@
+.body{
+    text-align: center;
+}
+h4{
+    display:inline-block;
+}
+
+.image-princesses{
+    width: 250px;
+    height:200px;
+}
+.bouton{
+    background-color: aqua;
+}
+.bouton:hover{
+    background-color: lawngreen;
+}
+
+.green{
+    color:limegreen;
+}
+.orange{
+    color:orangered;
+}
+
+.blue{
+    color:dodgerblue;
+}
+
+.purple{
+    color:purple;
+}
+
+.pink{
+    color:hotpink;
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type ="text/css" href ="Assignment-Quizz*.css"/>
+    <title>Quiz</title>
+</head>
+<body>
+<div>
+    <h1 class="green">Question 1:</h1>
+    <img src="./robin.jpg">
+    <h3>In what year did Robin Hood come out?</h3>
+    <label for="rep11"></label>
+    <input type="checkbox" id="rep11">
+    <h4>1970</h4> </br>
+    <label for="rep12"></label>
+    <input type="checkbox" id="rep12">
+    <!--onchange="add1();"-->
+    <h4>1973</h4> </br>
+    <label for="rep13"></label>
+    <input type="checkbox" id="rep13">
+    <h4>1969</h4> </br>
+    <label for="rep14"></label>
+    <input type="checkbox" id="rep14">
+    <h4>1975</h4> </br>
+
+    <h1 class="orange">Question 2:</h1>
+    <img src="./nemo-father.jpg">
+    <h3>What was Nemo’s dad’s name in Finding Nemo ?</h3>
+
+    <select name="father" id="rep2">
+        <option value="marin" >Marin</option>
+        <option value="martin" >Martin</option>
+        <option value="marlin" >Marlin</option>
+        <option value="merlu">Merlu</option>
+    </select>
+
+    <h1 class="blue">Question 3:</h1>
+    <h3>In which disney we saw this little mouse?</h3>
+    <img src="./gus-souris.png" alt="Gus Souris">
+    <form>
+        Tape the name of the movie:
+        <input type="text" id="movie"><br>
+    </form>
+
+    <h1 class="purple">Question 4:</h1>
+    <h3>Who is the princess of Frozen ?</h3>
+    <div>
+        <label for="rep41"></label>
+        <input type="radio" id="rep41">
+        <img src="./blancheNeige.jpg" class="image-princesses" id="blancheNeige">
+    </div>
+    <div>
+        <label for="rep42"></label>
+        <input type="radio" id="rep42">
+        <img src="./raiponce.jpg" class="image-princesses" id="raiponce">
+    </div>
+    <div>
+        <label for="rep43"></label>
+        <input type="radio" id="rep43">
+        <img src="./ariel.png" class="image-princesses" id="ariel">
+    </div>
+    <div>
+        <label for="rep44"></label>
+        <input type="radio" id="rep44">
+        <img src="reine-neige.jpg" class="image-princesses" id="reine-neige">
+    </div>
+
+    <h1 class="pink">Question 5:</h1>
+    <h3>How many years did it take to make Mulan?</h3>
+    <img src="./mulan.jpg">
+    <form>
+        Enter a number:
+        <input type="number" step="8" value="0" min="0" max="2000" id="rep5">
+    </form>
+
+
+    <button id="button" onclick="add1();">Submit</button>
+
+
+    <script type="text/javascript">
+
+        var add1 = function () {
+            obj={}
+            obj.sum=0;
+//            question 1
+            if (document.getElementById('rep12').checked) {
+                obj.sum += 1;
+                console.log('obj.sum is now ', obj.sum)
+            }
+//            question 2
+            var a=document.getElementById('rep2');
+            var b=a[a.selectedIndex].value;
+            if(b === 'marlin'){
+                obj.sum += 1;
+                console.log('obj.sum is now ', obj.sum)
+            }
+//            question 3
+            var answer_movie = document.getElementById('movie').value;
+            answer_movie=answer_movie.toLowerCase();
+            console.log(answer_movie);
+            if(answer_movie === 'cinderella'){
+                obj.sum += 1;
+                console.log('obj.sum is now ', obj.sum)
+            }
+//            question4
+            if (document.getElementById('rep44').checked) {
+                obj.sum += 1;
+                console.log('obj.sum is now ', obj.sum)
+            }
+//            question 5
+            if(document.getElementById('rep5').value==='5' ){
+                obj.sum += 1;
+                console.log('obj.sum is now ', obj.sum)
+            }
+//            test
+            if (obj.sum<= 1) {
+                console.log("You don't know nothing about Disney movies! ");
+            }
+            if (obj.sum> 1 && obj.sum < 4) {
+                console.log("You know a little bit of Disney movies but you are not a expert.");
+            }
+            if (obj.sum >= 4) {
+                console.log("Amazing ! You are a veritable expert of Disney movies!");
+            }
+
+        };
+
+
+
+
+
+
+
+        //in JavaScript, primitives like numbers are passed by VALUE -- calcSum(x) === calcSum(0)
+        //while OBJECTS are passed by reference (it actually passed a link to the same object). calcSum(obj) === calcSum({ ... })
+        </script>
+
+
+</div>
+</body>
+</html>
